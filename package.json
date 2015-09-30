@@ -1,0 +1,33 @@
+{
+  "name": "hotify",
+  "version": "0.0.1",
+  "description": "Makes broweserify bundle entry hot in HMR (Hot Module Replacement) sense",
+  "keywords": [
+    "browserify-transform",
+    "entry",
+    "hot",
+    "HMR"
+  ],
+  "author": "Irakli Gozalishvili <rfobic@gmail.com> (http://jeditoolkit.com)",
+  "homepage": "https://github.com/Gozala/broweserify-hotify",
+  "main": "./index.js",
+  "dependencies": {
+    "convert-source-map": "1.1.1",
+    "source-map": "0.5.1",
+    "through2": "2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gozala/broweserify-hotify.git",
+    "web": "https://github.com/Gozala/broweserify-hotify"
+  },
+  "bugs": {
+    "url": "http://github.com/Gozala/broweserify-hotify/issues/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Gozala/broweserify-hotify/License.md"
+    }
+  ]
+}

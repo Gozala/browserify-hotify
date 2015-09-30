@@ -1,7 +1,7 @@
 {
   "name": "hotify",
   "version": "0.0.1",
-  "description": "Makes broweserify bundle entry hot in HMR (Hot Module Replacement) sense",
+  "description": "Makes broweserify bundle entry hot in HMR (Hot Module Replacement) terms",
   "keywords": [
     "browserify-transform",
     "entry",

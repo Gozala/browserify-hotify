@@ -1,6 +1,6 @@
 {
   "name": "hotify",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Makes broweserify bundle entry hot in HMR (Hot Module Replacement) terms",
   "keywords": [
     "browserify-transform",
@@ -12,8 +12,8 @@
   "homepage": "https://github.com/Gozala/broweserify-hotify",
   "main": "./index.js",
   "dependencies": {
-    "convert-source-map": "1.1.1",
-    "source-map": "0.5.1",
+    "convert-source-map": "1.2.0",
+    "source-map": "0.5.3",
     "through2": "2.0.0"
   },
   "repository": {

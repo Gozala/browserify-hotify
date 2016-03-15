@@ -36,13 +36,11 @@ var rehead = function(input) {
   } + ')(function() {';
 
   var suffix = '});'
-  var source = prefix + input.code + suffix
 
-  return new SourceNode(null, null, null, [
-    new SourceNode(null, null, input.file, prefix),
-    SourceNode.fromStringWithSourceMap(source, new SourceMapConsumer(input.map)),
-    new SourceNode(null, null, input.file, suffix)
-  ]).join(separator).toStringWithSourceMap();
+  const node = SourceNode.fromStringWithSourceMap(input.code, new SourceMapConsumer(input.map))
+  node.prepend(prefix)
+  node.add(suffix)
+  return node.toStringWithSourceMap(input.map);
 }
 
 var transform = function(file) {
@@ -55,10 +53,11 @@ var transform = function(file) {
   }, function(resume) {
     var code = chunks.join('')
     var source = convert.fromSource(code)
-    var input = source ?
-      {file: file, map: source.toObject(), code: convert.removeComments(code)} :
-      {file: file, map: readMap(code), code: code}
-
+    var input =
+      ( source
+      ? {file: file, map: source.toObject(), code: convert.removeComments(code)}
+      : {file: file, map: readMap(file, code), code: code}
+      )
     var output = rehead(input)
 
     this.push(output.code + '\n'
